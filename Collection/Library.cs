@@ -22,7 +22,7 @@ namespace Skill_mine__project.Collection
        
         public class MainBookDetails
         {
-            static void Main(string[] args)
+            static void mMain(string[] args)
             {
                 List<Book> blist = new List<Book>()
             {

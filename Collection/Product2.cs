@@ -25,7 +25,7 @@ namespace Skill_mine__project.Collection
     
     public class Showroomm
     {
-        static void Main(string[] args)
+        static void mMain(string[] args)
         {
             List<Product2> p = new List<Product2>()
             {

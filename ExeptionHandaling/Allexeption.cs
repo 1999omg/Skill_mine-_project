@@ -36,7 +36,7 @@ namespace Skill_mine__project.ExeptionHandaling
 
 
 
-        static void Main(string[] args)
+        static void mMain(string[] args)
         {
             Allexeption exep = new Allexeption();
 

@@ -11,10 +11,10 @@ namespace Skill_mine__project.OPPS.Inheritance
     {
     }
     public class Employee {
-      public  int id;
-        public long sallery;
-        public string name;
-        public string dept;
+       int id;
+         long sallery;
+        string name;
+         string dept;
 
        public Employee (int id , long sallery, string name, string dept)
         {

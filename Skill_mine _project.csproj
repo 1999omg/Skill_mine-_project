@@ -43,13 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArrayObject.cs" />
+    <Compile Include="Array\Accurance.cs" />
+    <Compile Include="Array\Alternate.cs" />
+    <Compile Include="Array\ClassTask.cs" />
+    <Compile Include="Array\Geometry.cs" />
+    <Compile Include="Array\Maximum.cs" />
+    <Compile Include="Array\PairSum.cs" />
+    <Compile Include="Array\Percentage.cs" />
+    <Compile Include="Array\Sorting.cs" />
+    <Compile Include="Array\SubArray.cs" />
+    <Compile Include="Array\Table.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="ClassTask.cs" />
     <Compile Include="Collection\Bank.cs" />
+    <Compile Include="Collection\Delegate\Bank.cs" />
     <Compile Include="Collection\Delegate\Sample.cs" />
     <Compile Include="Collection\Employee.cs" />
-    <Compile Include="Collection\Laptop.cs" />
     <Compile Include="Collection\Library.cs" />
     <Compile Include="Collection\MVC.cs" />
     <Compile Include="Collection\Nongeneric.cs" />
@@ -66,12 +75,21 @@
     <Compile Include="OPPS\Encapsulation\Product.cs" />
     <Compile Include="OPPS\Inheritance\Constructorr.cs" />
     <Compile Include="OPPS\Overloding\Shapes.cs" />
+    <Compile Include="Array\Reverse.cs" />
+    <Compile Include="OPPS\Overriding.cs" />
+    <Compile Include="String\Accurance.cs" />
     <Compile Include="String\Pattern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="String\Class1.cs" />
+    <Compile Include="String\Remove.cs" />
+    <Compile Include="String\Split.cs" />
+    <Compile Include="Threading\SampleT.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

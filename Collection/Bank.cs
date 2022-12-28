@@ -45,7 +45,7 @@ namespace Skill_mine__project.Collection
 
     public class SavingAC
     {
-        static void Main(string[] args)
+        static void mMain(string[] args)
         {
             Bank b1 = new Bank(1," mr raghav ",545457,"saving account ");
             Bank b2 = new Bank(1, " mr raghav ", 545457, "saving account ");

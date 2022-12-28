@@ -30,6 +30,11 @@ namespace Skill_mine__project.Collection.Delegate
 
     public class MainMydelet
     {
-        static void Main
+        static void mMain (string []args)
+        {
+            Sample s = new Sample();
+           // Mydelet m = new Mydelet(s.addition);
+            
+        }
     }
 }

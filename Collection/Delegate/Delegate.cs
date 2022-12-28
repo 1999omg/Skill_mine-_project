@@ -27,7 +27,7 @@ namespace Skill_mine__project
     }
     public class User
     {
-        static void Main(string[] args)
+        static void mMain(string[] args)
         {
             Delegate d = new Delegate();
 

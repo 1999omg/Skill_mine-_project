@@ -36,7 +36,7 @@ namespace Skill_mine__project.Collection
     
     public class TQ
     {
-        static void Main(string[] args)
+        static void mMain(string[] args)
         {
             Student s1 = new Student (1, "ram");
             Student s2 = new Student(1, "ram");

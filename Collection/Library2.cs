@@ -23,7 +23,7 @@ namespace Skill_mine__project
         }
         public class BookMain
         {
-            static void Main(string[] args)
+            static void mMain(string[] args)
             {
                 List<Library2> l = new List<Library2>()
                 {

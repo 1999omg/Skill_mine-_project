@@ -23,7 +23,7 @@ namespace Skill_mine__project.Collection
     }
     public class Shoroom
     {
-        static void Main(string[] args)
+        static void mMain(string[] args)
         {
             Product pr1 = new Product(1,5000," key board  ");
             Product pr2 = new Product(2, 500, " mouse  ");
