@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Bank_Application
+{
+    public class userLogin : CounterDesk 
+    {
+         userLogin sr = new userLogin();
+        Cashier c = new Cashier();
+
+        public void login(int id, string pass)
+        {
+            Console.WriteLine("press 1 for ccreadit  ------- preass 2 debit");
+            int s = int.Parse(Console.ReadLine());
+            int idd = 0;
+            int ammount = 0;
+
+            foreach (UserInformation item in user)
+            {
+                if (item.Id == id && item.Pass == pass)
+                {
+
+                    switch (s)
+                    {
+                        case 1:
+                            // Console.WriteLine("---please enter id ---");
+                            // id = int.Parse(Console.ReadLine());
+                            Console.WriteLine("---please enter ammount ---");
+                            ammount = int.Parse(Console.ReadLine());
+                            sr.Creadit(id, ammount);
+                            break;
+
+                        case 2:
+                            // Console.WriteLine("---please enter id ---");
+                            // id = int.Parse(Console.ReadLine());
+                            Console.WriteLine("---please enter ammount ---");
+                            ammount = int.Parse(Console.ReadLine());
+                            sr.Debit(id, ammount);
+                            break;
+
+                    }
+                }
+            }
+        }
+
+
+    }
+
+
+
+}

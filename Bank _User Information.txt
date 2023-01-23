@@ -1,0 +1,331 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Bank_Application
+{
+   public class UserInformation
+    {
+        public void AdmineAdd()
+        {
+            int id = 5;
+         string password = "pass@123";
+        }
+
+
+
+        int id;
+        string name;
+        long adhar;
+        long mobile;
+        string address;
+       static int mlength = 9;
+        long balance;
+        static long acno = 1500310178;
+        string pass;
+
+     public   string Pass { get; set; }
+        public long Acno
+        {
+           
+            set
+            {
+                acno++;
+            }
+
+            get
+            {
+                return acno;
+            }
+        }
+
+      public  int Id { get; set; }
+      public  string Name { get; set; }
+      public   long Mobile
+        {
+           get
+            {
+                return mobile;
+            }
+
+           set
+            {
+                if (mobile < 0 & mobile > 10000000001)
+                {
+                    this.mobile = mobile;
+                }
+                else Console.WriteLine("incorrect mobile");
+            }
+
+        
+
+        }
+        public long Balance
+        {
+            get;
+            set;
+        }
+
+                 public string Address { get; set; }
+                public  long Adhar { get; set; }
+
+
+       
+
+    }
+
+    public class CounterDesk
+    {
+      public  List<UserInformation> user = new List<UserInformation>();
+
+        public void Add (UserInformation use)
+        {
+            user.Add(use);
+        }
+
+        public void Update(int id,long newMobile,string newAddress)
+        {
+           foreach (UserInformation item in user)
+            {
+                if (item.Id == id)
+                {
+                    item.Mobile = newMobile;
+                    item.Address = newAddress;
+
+                }
+            }
+           
+        }
+
+        public void Remove(int id)
+        {
+            foreach (UserInformation item in user)
+            {
+                if (item.Id == id)
+                {
+                    user.Remove(item);
+                }
+            }
+           
+        }
+        public List<UserInformation> list ()
+        {
+            return user;
+        }
+
+        public void Creadit(int id,long ammount)
+        {
+            foreach (UserInformation item in user)
+            {
+                if (item.Id == id)
+                {
+                    item.Balance = item.Balance + ammount;
+                }
+            }
+        }
+
+
+        public void Debit (int id ,long ammount)
+        {
+            foreach (UserInformation item in user)
+            {
+                if (item.Id==id)
+                {
+                    item.Balance = item.Balance - ammount;
+                }
+            }
+        }
+
+        public List<UserInformation> List()
+        {
+            return user;
+        }
+
+
+        public void login(int id, string pass)
+        {
+          
+
+            foreach ( UserInformation item in user)
+
+            {
+
+
+                Console.WriteLine("press 1 for ccreadit  ------- preass 2 debit");
+                int s = int.Parse(Console.ReadLine());
+                int idd = 0;
+                int ammount = 0;
+
+                if (item.Id== id && item.Pass== pass)
+                {
+
+                    switch (s)
+                    {
+
+                        case 1:
+                            // Console.WriteLine("---please enter id ---");
+                            // id = int.Parse(Console.ReadLine());
+                            Console.WriteLine("---please enter ammount ---");
+                            ammount = int.Parse(Console.ReadLine());
+                            item.Balance = item.Balance + ammount;
+                            break;
+
+                        case 2:
+                            Console.WriteLine("---please enter ammount ---");
+                            ammount = int.Parse(Console.ReadLine());
+                            item.Balance = item.Balance - ammount;
+                            break;
+
+                    }
+                }
+            }
+
+            
+
+                        
+                    
+                
+            
+        }
+
+
+
+
+
+
+
+
+    }
+
+
+    public class Cashier
+    {
+        public static void mmMain (string[] args)
+        {
+
+            CounterDesk d = new CounterDesk();
+        
+            
+                      
+           
+                UserInformation u1 = new UserInformation();
+                Console.WriteLine("---enter id for user--- ");
+                u1.Id = int.Parse(Console.ReadLine());
+                Console.WriteLine("--- enter name of a customer ---");
+                u1.Name = Console.ReadLine();
+                Console.WriteLine("---enter mobile number ---");
+                u1.Mobile = long.Parse(Console.ReadLine());
+                Console.WriteLine("---enter address of customer---");
+                u1.Address = Console.ReadLine();
+                Console.WriteLine("---enter first opening ammount  of customer---");
+                u1.Balance = long.Parse(Console.ReadLine());
+            Console.WriteLine("---enter first password   of customer---");
+            u1.Pass = Console.ReadLine();
+
+                d.Add(u1);
+
+
+
+           /* UserInformation u2 = new UserInformation();
+            Console.WriteLine("---enter id for user--- ");
+            u2.Id= int.Parse(Console.ReadLine());
+            Console.WriteLine("--- enter name of a customer ---");
+            u2.Name = Console.ReadLine();
+            Console.WriteLine("---enter mobile number ---");
+            u2.Mobile = long.Parse(Console.ReadLine());
+            Console.WriteLine("---enter address of customer---");
+            u2.Address = Console.ReadLine();
+            Console.WriteLine("---enter first opening ammount  of customer---");
+            u2.Balance = long.Parse(Console.ReadLine());
+            d.Add(u2);
+
+
+            UserInformation u3 = new UserInformation();
+            Console.WriteLine("---enter id for user--- ");
+            u3.Id = int.Parse(Console.ReadLine());
+            Console.WriteLine("--- enter name of a customer ---");
+            u3.Name = Console.ReadLine();
+            Console.WriteLine("---enter mobile number ---");
+            u3.Mobile = long.Parse(Console.ReadLine());
+            Console.WriteLine("---enter address of customer---");
+            u3.Address = Console.ReadLine();
+            Console.WriteLine("---enter first opening ammount  of customer---");
+            u3.Balance = long.Parse(Console.ReadLine());
+            d.Add(u3);*/
+
+
+            Console.WriteLine("---please press 1 for creadit ammount---");
+            Console.WriteLine("---please press 2 for debit ammount---");
+            Console.WriteLine("---please press 3 for remove account---");
+            Console.WriteLine("---please press 4 for update account information---");
+            Console.WriteLine("---please press 5 for user login ---");
+
+            List<UserInformation> userlist = d.List();// for printing data
+
+            int s = int.Parse(Console.ReadLine());
+            int idd = 0;
+            int ammount = 0;
+
+            switch (s)
+            {
+                case 1:
+                    Console.WriteLine("---please enter id ---");
+                    idd = int.Parse(Console.ReadLine());
+                    Console.WriteLine("---please enter ammount ---");
+                    ammount =   int.Parse(Console.ReadLine());
+                    d.Creadit(idd, ammount);
+                    break;
+
+                case 2:
+                    Console.WriteLine("---please enter id ---");
+                    idd = int.Parse(Console.ReadLine());
+                    Console.WriteLine("---please enter ammount ---");
+                    ammount = int.Parse(Console.ReadLine());
+                    d.Debit(idd, ammount);
+                    break;
+
+                case 3:
+                    Console.WriteLine("---please enter id ---");
+                    idd = int.Parse(Console.ReadLine());
+                    d.Remove(idd);
+                    break;
+
+                case 4:
+                    Console.WriteLine("---please enter id ---");
+                    idd = int.Parse(Console.ReadLine());
+                    Console.WriteLine("---please enter new mobile no ---");
+                     long newM=   long.Parse(Console.ReadLine());
+                    Console.WriteLine("---please enter new address ---");
+
+                    string addr = Console.ReadLine();
+                    d.Update(idd, newM, addr);
+                    break;
+
+                case 5:
+                    userLogin sr = new userLogin();
+                    idd = int.Parse(Console.ReadLine());
+                    Console.WriteLine("enter id ");
+                    string pass = Console.ReadLine();
+                    Console.WriteLine("enter Password");
+                    d.login(idd, pass);
+                    break;
+            }
+
+           
+
+            foreach (UserInformation item in userlist)
+            {
+                Console.WriteLine(item);
+            }
+
+             
+
+        }
+
+       
+    }
+
+
+   
+    
+}
